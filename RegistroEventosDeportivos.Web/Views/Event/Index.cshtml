@@ -1,0 +1,22 @@
+
+@model List<RegistroEventosDeportivos.Domain.Entities.Event>
+
+<h2>Eventos Deportivos</h2>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Ubicación</th>
+    </tr>
+    @foreach (var evento in Model)
+    {
+        <tr>
+            <td>@evento.Name</td>
+            <td>@evento.Date.ToShortDateString()</td>
+            <td>@evento.Location</td>
+        </tr>
+    }
+</table>
+
+<a asp-action="Create">Crear Nuevo Evento</a>
